@@ -43,7 +43,7 @@
     </section>
     <section class="panel" id="creation">
       <h2>🎬 Mes projets vidéo</h2>
-      <p class="muted">Enregistrez vos idées de vidéos. La création et l'animation IA seront ajoutées dans les prochaines étapes.</p>
+      <p class="muted">Ouvrez un projet pour préparer son scénario et construire son découpage scène par scène.</p>
       <form id="project-form">
         <div class="formrow"><label for="project-name">Titre du projet</label><input id="project-name" placeholder="Ex. Julia et Lilo — épisode 1" required></div>
         <div class="formrow"><label for="project-note">Résumé de l'histoire</label><textarea id="project-note" placeholder="Décrivez brièvement votre idée..."></textarea></div>
@@ -52,6 +52,14 @@
       <div class="item-list" id="projects-list" aria-live="polite"></div>
     </section>
   </div>
+  <section class="panel editor-panel" id="story-editor" hidden>
+    <div class="editor-heading"><div><span class="eyebrow">ATELIER DE CRÉATION</span><h2 id="editor-title">✍️ Scénario et scènes</h2></div><span class="pill">FORMAT 9:16</span></div>
+    <p class="muted" id="editor-summary"></p>
+    <div class="actions"><button class="btn" type="button" id="draft-scenes">✦ Préparer un découpage</button><button class="btn secondary" type="button" id="add-scene">＋ Ajouter une scène</button></div>
+    <p class="hint">Le découpage automatique crée un premier brouillon à partir des phrases de votre résumé. Vous pourrez ensuite modifier chaque scène. Ce n'est pas encore une génération par IA.</p>
+    <div id="scenes-list" class="scenes-list"></div>
+    <p class="save-note" aria-live="polite">Vos modifications sont enregistrées sur cet appareil.</p>
+  </section>
   <section class="panel" id="projects">
     <h2>🎞️ Mes vidéos</h2>
     <p class="muted">Les projets enregistrés apparaissent dans la section « Mes projets vidéo ». Les fichiers MP4 seront disponibles ici après l'ajout du module d'export.</p>
@@ -60,7 +68,7 @@
     <h2>📣 Préparer une publication</h2>
     <p class="muted">Cette section accueillera les titres, descriptions et hashtags prêts à copier pour YouTube Shorts et TikTok.</p>
   </section>
-  <footer class="status"><b>Version 0.1 — interface de départ</b><br>Les personnages et projets sont actuellement enregistrés dans le stockage local de ce navigateur sur cet appareil. Ils ne sont pas encore synchronisés entre appareils. La génération IA, les voix, le montage et l'export MP4 seront développés progressivement.</footer>
+  <footer class="status"><b>Version 0.2 — atelier de scénario</b><br>Les personnages et projets sont actuellement enregistrés dans le stockage local de ce navigateur sur cet appareil. Ils ne sont pas encore synchronisés entre appareils. La génération IA, les voix, le montage et l'export MP4 seront développés progressivement.</footer>
 </main>
 <script src="app.js"></script>
 </body>
