@@ -34,6 +34,14 @@
     <section class="panel" id="characters">
       <h2>🧑‍🎨 Bibliothèque de personnages</h2>
       <p class="muted">Ajoutez le nom et une description pour garder vos idées de personnages.</p>
+      <div class="shared-reference-box">
+        <strong>🖼️ Image commune Julia + Lilo</strong>
+        <p class="muted">Choisissez jusqu’à deux photos ensemble depuis votre téléphone. Elles apparaîtront dans les scènes où Julia et Lilo sont présentes toutes les deux.</p>
+        <label class="shared-reference-upload">Choisir les photos
+          <input id="shared-reference-input" type="file" accept="image/*" multiple>
+        </label>
+        <div id="shared-reference-preview" class="shared-reference-preview"></div>
+      </div>
       <form id="character-form">
         <div class="formrow"><label for="character-name">Nom du personnage</label><input id="character-name" placeholder="Ex. Julia" required></div>
         <div class="formrow"><label for="character-note">Description / apparence</label><textarea id="character-note" placeholder="Cheveux, vêtements, couleurs, personnalité..."></textarea></div>
