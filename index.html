@@ -3,32 +3,65 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#111827">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="Studio personnel de création de vidéos cartoon.">
   <title>Mon AI Cartoon Studio</title>
-  <style>
-    :root{color-scheme:dark;--bg:#0b1020;--panel:#151d31;--muted:#9aa8c2;--text:#f4f6fb;--accent:#9b8cff;--line:#28334d}
-    *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top right,#24204a 0,transparent 35%),var(--bg);color:var(--text);font:15px system-ui,-apple-system,Segoe UI,sans-serif}
-    .wrap{max-width:1050px;margin:auto;padding:24px 16px 48px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-    .brand{font-weight:800;font-size:19px}.tag{color:#c9c0ff;background:#29234d;border:1px solid #51458b;border-radius:99px;padding:6px 10px;font-size:12px}
-    h1{font-size:clamp(28px,6vw,46px);line-height:1.1;margin:42px 0 12px}.lead{color:var(--muted);max-width:620px;line-height:1.7}
-    .actions{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0}.btn{border:0;border-radius:12px;padding:12px 17px;font-weight:700;background:var(--accent);color:#111027;cursor:pointer}.btn.secondary{background:#242e46;color:var(--text);border:1px solid var(--line)}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-top:28px}.card{background:linear-gradient(145deg,#19233a,#121a2c);border:1px solid var(--line);border-radius:18px;padding:19px;min-height:145px}.ico{font-size:25px}.card h2{font-size:17px;margin:12px 0 6px}.card p{color:var(--muted);line-height:1.5;margin:0;font-size:13px}
-    .status{margin-top:28px;padding:16px;border:1px solid var(--line);border-radius:14px;color:var(--muted);font-size:13px}
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="wrap">
-    <header class="top"><div class="brand">🎬 Mon AI Cartoon Studio</div><span class="tag">Votre studio créatif</span></header>
+<main class="app">
+  <header class="topbar">
+    <div class="brand">🎬 Mon AI Cartoon Studio<small>Votre atelier de création</small></div>
+    <span class="pill">ESPACE PERSONNEL</span>
+  </header>
+  <nav class="nav" aria-label="Navigation">
+    <a href="#creation">Créer</a><a href="#characters">Personnages</a><a href="#projects">Mes vidéos</a><a href="#publication">Publication</a>
+  </nav>
+  <section class="hero">
+    <div class="eyebrow">Imaginez · Créez · Racontez</div>
     <h1>Donnez vie à vos histoires.</h1>
-    <p class="lead">Créez vos vidéos cartoon scène par scène, retrouvez vos personnages et préparez des vidéos verticales pour YouTube Shorts et TikTok.</p>
-    <div class="actions"><button class="btn" onclick="alert('La création vidéo sera activée dans une prochaine étape.')">＋ Créer une vidéo</button><button class="btn secondary" onclick="document.getElementById('library').scrollIntoView({behavior:'smooth'})">Voir mes espaces</button></div>
-    <section class="grid" id="library">
-      <article class="card"><div class="ico">✨</div><h2>Créer une vidéo</h2><p>Idée, histoire, scénario et découpage en scènes.</p></article>
-      <article class="card"><div class="ico">🧑‍🎨</div><h2>Personnages</h2><p>Conservez les fiches de Julia, Lilo et vos futurs personnages.</p></article>
-      <article class="card"><div class="ico">🎞️</div><h2>Mes vidéos</h2><p>Retrouvez vos projets et vos exports au même endroit.</p></article>
-      <article class="card"><div class="ico">📣</div><h2>Publication</h2><p>Préparez titres, descriptions et hashtags pour vos publications.</p></article>
+    <p>Préparez vos histoires cartoon scène par scène, gardez vos personnages dans votre bibliothèque et organisez vos projets pour YouTube Shorts et TikTok.</p>
+    <div class="actions"><a class="btn" href="#creation" style="text-decoration:none">＋ Commencer un projet</a><a class="btn secondary" href="#characters" style="text-decoration:none">Mes personnages</a></div>
+  </section>
+  <div class="section-head"><h2>Votre studio</h2><span>Tout au même endroit</span></div>
+  <section class="grid">
+    <article class="card"><div class="ico">✨</div><h3>Créer une vidéo</h3><p>Préparez une idée, une histoire et les scènes de votre épisode.</p></article>
+    <article class="card"><div class="ico">🧑‍🎨</div><h3>Personnages</h3><p>Conservez les fiches de Julia, Lilo et vos nouveaux personnages.</p></article>
+    <article class="card"><div class="ico">🎞️</div><h3>Mes vidéos</h3><p>Retrouvez ici la liste de vos projets enregistrés.</p></article>
+    <article class="card"><div class="ico">📣</div><h3>Publication</h3><p>Préparez les titres, descriptions et hashtags de vos vidéos.</p></article>
+  </section>
+  <div class="workspace">
+    <section class="panel" id="characters">
+      <h2>🧑‍🎨 Bibliothèque de personnages</h2>
+      <p class="muted">Ajoutez le nom et une description pour garder vos idées de personnages.</p>
+      <form id="character-form">
+        <div class="formrow"><label for="character-name">Nom du personnage</label><input id="character-name" placeholder="Ex. Julia" required></div>
+        <div class="formrow"><label for="character-note">Description / apparence</label><textarea id="character-note" placeholder="Cheveux, vêtements, couleurs, personnalité..."></textarea></div>
+        <div class="actions"><button class="btn" type="submit">＋ Enregistrer le personnage</button></div>
+      </form>
+      <div class="item-list" id="characters-list" aria-live="polite"></div>
     </section>
-    <div class="status">Version de démarrage — interface en construction. La génération IA et l’export MP4 seront ajoutés progressivement.</div>
-  </main>
+    <section class="panel" id="creation">
+      <h2>🎬 Mes projets vidéo</h2>
+      <p class="muted">Enregistrez vos idées de vidéos. La création et l'animation IA seront ajoutées dans les prochaines étapes.</p>
+      <form id="project-form">
+        <div class="formrow"><label for="project-name">Titre du projet</label><input id="project-name" placeholder="Ex. Julia et Lilo — épisode 1" required></div>
+        <div class="formrow"><label for="project-note">Résumé de l'histoire</label><textarea id="project-note" placeholder="Décrivez brièvement votre idée..."></textarea></div>
+        <div class="actions"><button class="btn" type="submit">＋ Enregistrer le projet</button></div>
+      </form>
+      <div class="item-list" id="projects-list" aria-live="polite"></div>
+    </section>
+  </div>
+  <section class="panel" id="projects">
+    <h2>🎞️ Mes vidéos</h2>
+    <p class="muted">Les projets enregistrés apparaissent dans la section « Mes projets vidéo ». Les fichiers MP4 seront disponibles ici après l'ajout du module d'export.</p>
+  </section>
+  <section class="panel" id="publication">
+    <h2>📣 Préparer une publication</h2>
+    <p class="muted">Cette section accueillera les titres, descriptions et hashtags prêts à copier pour YouTube Shorts et TikTok.</p>
+  </section>
+  <footer class="status"><b>Version 0.1 — interface de départ</b><br>Les personnages et projets sont actuellement enregistrés dans le stockage local de ce navigateur sur cet appareil. Ils ne sont pas encore synchronisés entre appareils. La génération IA, les voix, le montage et l'export MP4 seront développés progressivement.</footer>
+</main>
+<script src="app.js"></script>
 </body>
 </html>
